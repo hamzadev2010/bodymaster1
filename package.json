@@ -11,6 +11,9 @@
   "engines": {
     "node": "20.x"
   },
+  "resolutions": {
+    "lightningcss": "1.8.0"
+  },
   "dependencies": {
     "@prisma/client": "^6.16.2",
     "lightningcss": "^1.30.2",
