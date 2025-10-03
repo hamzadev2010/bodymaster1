@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		color-scheme: light;
+	}
+
+  ::selection {
+    background: #c7d2fe; /* indigo-200 */
+    color: #0f172a;      /* slate-900 */
+  }
+  ::-moz-selection {
+    background: #c7d2fe;
+    color: #0f172a;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25); /* indigo-600 ring */
+    background-color: #ffffff; /* ensure white bg on focus */
+    border-color: #6366f1;     /* indigo-500 */
+    color: #0f172a;            /* slate-900 */
+  }
+
+  /* Default readable form controls */
+  input, select, textarea {
+    color: #0f172a;            /* slate-900 */
+    background-color: #ffffff; /* white */
+    border-color: #d1d5db;     /* neutral-300 */
+    caret-color: #0f172a;      /* visible caret */
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    font-weight: 500;          /* medium for visibility */
+  }
+  input::placeholder, textarea::placeholder {
+    color: #9ca3af;            /* neutral-400 */
+    opacity: 1;
+  }
+  input:focus::placeholder, textarea:focus::placeholder {
+    color: #6b7280; /* neutral-500 for better contrast on focus */
+  }
+  input:disabled, select:disabled, textarea:disabled {
+    background-color: #f5f5f5; /* neutral-100 */
+    color: #9ca3af;            /* neutral-400 */
+  }
+
+  select option {
+    color: #0f172a;            /* option text dark */
+    background-color: #ffffff; /* white background */
+  }
+
+  /* Stronger visual focus border */
+  input:focus, select:focus, textarea:focus {
+    border-width: 2px;
+  }
+  /* Chrome autofill fix for dark/light contrast */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-text-fill-color: #0f172a;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+/* Custom component classes removed to avoid @apply issues in Tailwind v4 */
+
+/* Solid black labels for maximum clarity */
+.label-title {
+  font-weight: 600; /* semibold */
+  color: #111827;  /* gray-900 */
+}
